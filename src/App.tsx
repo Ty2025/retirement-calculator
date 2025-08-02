@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import InputField from "./components/inputField";
-import { Line } from 'react-chartjs-2';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ChartComponent from "./components/ChartComponent";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -164,44 +164,7 @@ function App() {
                       </div>
                       {growthData.length > 0 && (
                         <div className="bg-white p-3 rounded shadow-sm mt-4">
-                          <Line
-                            data={{
-                              labels: Array.from({ length: growthData.length }, (_, i) => {
-                                const baseAge = Number(currentAge) || 0;
-                                return `${baseAge + i + 1}`;
-                              }),
-                              datasets: [
-                                {
-                                  label: 'Projected Balance',
-                                  data: growthData,
-                                  borderColor: 'rgba(54, 162, 235, 1)',
-                                  backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                                  fill: true,
-                                  tension: 0.2,
-                                },
-                              ],
-                            }}
-                            options={{
-                              responsive: true,
-                              plugins: {
-                                legend: { display: false },
-                                title: { display: true, text: 'Retirement Savings Growth Over Time' },
-                              },
-                              scales: {
-                                y: {
-                                  beginAtZero: true,
-                                  ticks: {
-                                    callback: function(value) {
-                                      return 'R' + Number(value).toLocaleString();
-                                    }
-                                  }
-                                },
-                                x: {
-                                  title: { display: true, text: 'Age' }
-                                }
-                              }
-                            }}
-                          />
+                          <ChartComponent growthData={growthData} currentAge={currentAge} />
                         </div>
                       )}
                     </div>
