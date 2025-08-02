@@ -28,9 +28,11 @@ function App() {
           id="currentAge"
           value={currentAge}
           min={0}
+          inputMode="numeric"
+          pattern="[0-9]*"
           onChange={e => {
-            const val = e.target.value;
-            if (/^\d*$/.test(val) && Number(val) >= 0) setCurrentAge(val === '' ? 0 : Number(val));
+            const digits = e.target.value.replace(/\D/g, "");
+            setCurrentAge(digits === '' ? 0 : Number(digits));
           }}
         />
         <InputField
@@ -39,9 +41,11 @@ function App() {
           id="retirementAge"
           value={retirementAge}
           min={0}
+          inputMode="numeric"
+          pattern="[0-9]*"
           onChange={e => {
-            const val = e.target.value;
-            if (/^\d*$/.test(val) && Number(val) >= 0) setRetirementAge(val === '' ? 0 : Number(val));
+            const digits = e.target.value.replace(/\D/g, "");
+            setRetirementAge(digits === '' ? 0 : Number(digits));
           }}
         />
         <InputField
@@ -50,9 +54,11 @@ function App() {
           id="monthlyContributions"
           value={monthlyContributions}
           min={0}
+          inputMode="numeric"
+          pattern="[0-9]*"
           onChange={e => {
-            const val = e.target.value;
-            if (/^\d*$/.test(val) && Number(val) >= 0) setMonthlyContributions(val === '' ? 0 : Number(val));
+            const digits = e.target.value.replace(/\D/g, "");
+            setMonthlyContributions(digits === '' ? 0 : Number(digits));
           }}
         />
         <InputField
@@ -61,9 +67,11 @@ function App() {
           id="annualReturn"
           value={annualReturn}
           min={0}
+          inputMode="numeric"
+          pattern="[0-9]*"
           onChange={e => {
-            const val = e.target.value;
-            if (/^\d*$/.test(val) && Number(val) >= 0) setAnnualReturn(val === '' ? 0 : Number(val));
+            const digits = e.target.value.replace(/\D/g, "");
+            setAnnualReturn(digits === '' ? 0 : Number(digits));
           }}
         />
         <button type="submit" className="btn btn-primary">Calculate</button>
