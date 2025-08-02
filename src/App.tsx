@@ -157,6 +157,11 @@ function App() {
                       <h5 className="mb-0">{ageError}</h5>
                     </div>
                   )}
+                  {!ageError && result === null && (
+                    <div className="alert alert-info text-center" role="alert">
+                      <h5 className="mb-0">🧮 Enter your details to see your retirement projection!</h5>
+                    </div>
+                  )}
                   {!ageError && result !== null && (
                     <div>
                       <div className="alert alert-success text-center" role="alert">
