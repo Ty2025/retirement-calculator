@@ -7,7 +7,6 @@ This is a modern, interactive retirement calculator built with React, TypeScript
 - Modular React components (`InputField`, `ChartComponent`)
 - Real-time calculation and chart updates as you type
 - Input validation and user-friendly error messages
-- Handles edge cases (e.g., retirement age less than current age)
 - Clean, maintainable TypeScript code
 
 
