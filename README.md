@@ -25,7 +25,7 @@ This is a modern, interactive retirement calculator built with React, TypeScript
    ```
 2. Install dependencies:
    ```sh
-   npm install
+   npm i
    ```
 3. Start the development server:
    ```sh
